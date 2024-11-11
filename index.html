@@ -16,10 +16,12 @@
 
     <ul id="list"></ul>
 
-    <div id="box-newTask">
-      <input id="task" type="text">
-      <button id="add" type="submit"><img src="./assets/add.svg" alt=""></button>
-    </div>
+    <form id="form-newTask">
+      <input id="taskTitle" type="text" required="required">
+      <input id="taskDate" type="date" required="required">
+      <input id="taskTime" type="time" required="required">
+      <button id="buttonAdd" type="submit"><img src="./assets/add.svg" alt=""></button>
+    </form>
   </div>
 </body>
 <script src="./index.js"></script>

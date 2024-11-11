@@ -4,14 +4,26 @@
   box-sizing: border-box;
 }
 
+.taskCompleted {
+  background-color: #66ff55;
+}
+
 body {
-  color: #233947;
   padding-top: 50px;
+}
+
+body, input {
+  font-size: 16px;
+  color: #233947;
   font-family: "Roboto Slab", serif;
 }
 
+body input {
+  background: transparent;
+}
+
 #app {
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
 }
 
@@ -29,13 +41,56 @@ h1 {
 }
 
 #list li {
-  padding-bottom: 2px;
+  padding: 2px;
   margin-bottom: 10px;
-  border-bottom: 1px solid #49708a;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+#list li #checkbox{
+  cursor: pointer;
+}
 
-#box-newTask {
+#list li #taskDescription {
+  width: 80%;
+  border-bottom: 1px solid #49708a;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+
+#editOrRemove {
+  display: flex;
+  gap: 5px;
+}
+
+#editOrRemove button {
+  width: 15px;
+  height: 15px;
+  background: none;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transition: .2s;
+}
+
+#editOrRemove #edit {
+  background-image: url("./assets/edit.svg");
+}
+
+#editOrRemove #remove {
+  background-image: url("./assets/remove.svg");
+}
+
+#editOrRemove #remove:hover {
+  background-image: url("./assets/remove-red.svg");
+}
+
+form{
   width: 100%;
   margin-top: 20px;
   display: flex;
@@ -43,8 +98,8 @@ h1 {
   gap: 5px;
 }
 
-#box-newTask input {
-  width: 200px;
+form input {
+  width: 100px;
   height: 40px;
   border: none;
   background-color: #88abc2;
@@ -55,10 +110,11 @@ h1 {
   outline: none;
 }
 
-#box-newTask button {
+form button {
   width: 40px;
   height: 40px;
   border: none;
+  cursor: pointer;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
@@ -66,12 +122,12 @@ h1 {
   transition: .5s;
 }
 
-#box-newTask button:hover {
+form button:hover {
   transform: scale(1.05);
   background-color: #cbff47;
 }
 
-#box-newTask button img {
+form button img {
   width: 30px;
   color: #233947;
 }
